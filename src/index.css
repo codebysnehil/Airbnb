@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --lux-maroon-1: #3b0005; /* deep */
+  --lux-maroon-2: #5a000a; /* mid */
+  --lux-maroon-3: #7a0012; /* light */
+}
+
+.font-hero {
+  font-family: 'Playfair Display', 'EB Garamond', ui-serif, Georgia, serif;
+}
+
+.bg-lux-maroon {
+  background: linear-gradient(
+    to bottom,
+    rgba(58, 0, 5, 0.9) 0%,
+    rgba(90, 0, 10, 0.86) 40%,
+    rgba(122, 0, 18, 0.92) 100%
+  );
+}
+
 input[type="text"],
 input[type="password"],
 input[type="email"],
