@@ -5,6 +5,7 @@ import Layout from "./Layout";
 import Register from "./pages/Register";
 import Places from "./pages/Places";
 import Home from "./pages/Home";
+import Stay from "./Components/Stay";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Register />} />
+          <Route path="/stay/:stayId" element={<Stay />} />
           <Route path="/account/:subpage?" element={<Places />} />
           <Route path="/account/:subpage/:action" element={<Places />} />
         </Route>
