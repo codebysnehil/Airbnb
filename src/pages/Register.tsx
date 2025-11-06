@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Signup: React.FC = () => {
-  const [name, setName] = useState("");
+  const [name, setName] = useState<string>("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [agreedToTerms, setAgreedToTerms] = useState(false);
@@ -13,20 +13,7 @@ const Signup: React.FC = () => {
   };
 
   return (
-    <div
-      className="min-h-screen flex flex-col md:flex-row w-full justify-between relative overflow-hidden"
-      style={{
-        background: "linear-gradient(135deg, #1a0000 0%, #2d0a0f 50%, #1a0000 100%)",
-      }}
-    >
-      {/* Subtle ambient glow */}
-      <div
-        className="absolute top-1/2 left-1/2 w-[800px] h-[800px] rounded-full opacity-10 blur-[200px] -translate-x-1/2 -translate-y-1/2"
-        style={{
-          background: "radial-gradient(circle, rgba(212,175,55,0.2) 0%, transparent 70%)",
-        }}
-      />
-
+    <div className="min-h-screen flex w-full relative overflow-hidden">
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap');
 
@@ -167,10 +154,11 @@ const Signup: React.FC = () => {
         }
       `}</style>
 
+
       {/* Top-left logo */}
       <Link
         to="/"
-        className="absolute top-6 left-6 z-20 w-12 h-12 md:w-14 md:h-14 transition-all hover:scale-110 hover:opacity-80"
+        className="fixed top-6 left-6 z-50 w-12 h-12 md:w-14 md:h-14 transition-all hover:scale-110 hover:opacity-80"
       >
         <svg className="w-full h-full" viewBox="0 0 1991.3 2143.2" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -186,18 +174,25 @@ const Signup: React.FC = () => {
         </svg>
       </Link>
 
-      {/* Left side: Hero image */}
-      <div className="hidden md:block md:w-1/2 h-screen relative overflow-hidden">
+      {/* Left side: Hero image - FIXED POSITION */}
+      <div 
+        className="hidden md:block md:w-1/2 fixed left-0 top-0 bottom-0 h-screen"
+      >
         <img
-          src="/signup.jpg"
+          src="signup.jpg"
           alt="Luxury accommodations"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-[#1a0000]/50 via-transparent to-[#1a0000]/70" />
       </div>
 
-      {/* Right side: Form */}
-      <div className="w-full md:w-1/2 flex items-center justify-center relative z-10 p-6 md:p-12">
+      {/* Right side: Form - SCROLLABLE */}
+
+      <div className="w-full md:w-1/2 md:ml-[50%] min-h-screen overflow-y-auto relative z-10 p-6 md:p-12" style={{
+  background: "linear-gradient(135deg, #1a0000 0%, #2d0a0f 50%, #1a0000 100%)",
+}}
+>
+
         <div className="w-full max-w-[440px]">
           {/* Header */}
           <div className="mb-12">

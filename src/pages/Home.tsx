@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Header from "../Components/Header";
 import StaysCarousel from "../Components/StaysCarousel";
+import PartnersCarousel from "../Components/Partners";
+import HowItWorks from "../Components/HowItWorks";
+import TrustStatistics from "../Components/Trust&Statistics";
 
 const AirbnbLuxury = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -179,10 +182,17 @@ const AirbnbLuxury = () => {
         </div>
       </div>
 
+      <TrustStatistics/>
+
       {/* Seamless Gradient Transition */}
-    
+     
       {/* Stays Section */}
       <StaysCarousel/>
+      
+      {/*Discover Section*/}
+      <HowItWorks/>
+
+      <PartnersCarousel/>    
     </div>
   );
 };
